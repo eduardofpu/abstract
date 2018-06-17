@@ -44,7 +44,7 @@ public class PessoaIntegrateRotas {
         List<Pessoa> pessoas = Arrays.asList(pessoa1, pessoa2, pessoa3);
 
         BDDMockito.when(pessoaRepository.findAll()).thenReturn(pessoas);
-        ResponseEntity<String> response = testRestTemplate.getForEntity("/pessoas",String.class);
+        ResponseEntity<String> response = testRestTemplate.getForEntity("/buscar",String.class);
         Assertions.assertThat(response.getStatusCodeValue()).isEqualTo(200);
 
 

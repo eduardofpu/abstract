@@ -3,12 +3,12 @@ package com.org.api;
 import com.org.modelo.Pessoa;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
+@RequestMapping(value = "/")
 public interface PessoaApi {
 
-    @RequestMapping(value = "/pessoas", method = RequestMethod.GET)
+    @GetMapping(path = "buscar")
     ResponseEntity<?> findAll();
 
-    @RequestMapping(value = "/pessoas", method = RequestMethod.POST, consumes = "application/json")
+    @PostMapping(path = "salvar")
     ResponseEntity<?> create(@RequestBody Pessoa pessoa);
 }
