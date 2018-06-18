@@ -20,8 +20,6 @@ import org.springframework.test.context.junit4.SpringRunner;
 public class CidadeIntegrate {
 
     @Autowired
-    private CidadeRepository cidadeRepository;
-    @Autowired
     private CidadeService cidadeService;
 
     @Rule// dizer quais as ecessões irão acontecer no método
@@ -33,7 +31,6 @@ public class CidadeIntegrate {
                         .nomeCidade("Uberlândia")
                         .build();
 
-        //cidadeRepository.save(cidade);
         cidadeService.create(cidade);
 
         Assertions.assertThat(cidade.getId()).isNotNull();
